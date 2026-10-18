@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Anthony Altuve - Pronombres Personales y Verbo To Be</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        teal: {
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .tab-active {
+            border-bottom: 3px solid #14b8a6;
+            color: #14b8a6;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-teal-500 text-slate-900 p-2.5 rounded-xl font-black text-xl flex items-center justify-center w-11 h-11 shadow-lg shadow-teal-500/30">
+                        TA
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white">Teacher Anthony Altuve</h1>
+                        <p class="text-xs text-teal-400 font-medium">Aprende Inglés Fácil y Rápido</p>
+                    </div>
+                </div>
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#pronouns" class="hover:text-teal-400 transition-colors">Pronombres</a>
+                    <a href="#verbtobe" class="hover:text-teal-400 transition-colors">Verbo To Be</a>
+                    <a href="#pronunciation" class="hover:text-teal-400 transition-colors">Pronunciación</a>
+                    <a href="#exercises" class="hover:text-teal-400 transition-colors">Ejercicios</a>
+                    <a href="#video" class="hover:text-teal-400 transition-colors">Video Lección</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="bg-gradient-to-r from-slate-900 via-slate-800 to-teal-900 text-white py-12 px-4 shadow-inner">
+        <div class="max-w-5xl mx-auto text-center space-y-4">
+            <span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full text-xs font-semibold uppercase tracking-wider border border-teal-500/30">
+                Clase Interactiva
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                Pronombres Personales y Verbo "To Be"
+            </h2>
+            <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
+                ¡Hola! Soy el <strong class="text-teal-300">Profesor Anthony Altuve</strong>. Domina las bases del inglés explicadas en español con audio de pronunciación en tiempo real y ejercicios prácticos.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-10 space-y-16">
+
+        <!-- SECTION 1: Pronombres Personales -->
+        <section id="pronouns" class="scroll-mt-24 space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-3">
+                    <i class="fa-solid fa-users text-teal-600"></i> 1. Pronombres Personales (Subject Pronouns)
+                </h3>
+                <p class="text-slate-600 mt-1">Los pronombres sustituyen al sujeto en la oración. Haz clic en el ícono de audio para escuchar cómo se pronuncia cada uno en inglés.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider block">Primera Persona Singular</span>
+                        <h4 class="text-2xl font-black text-slate-800">I</h4>
+                        <p class="text-slate-500 text-sm">Yo</p>
+                    </div>
+                    <button onclick="speakText('I')" class="w-10 h-10 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors" title="Escuchar pronunciación">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider block">Segunda Persona</span>
+                        <h4 class="text-2xl font-black text-slate-800">You</h4>
+                        <p class="text-slate-500 text-sm">Tú / Usted / Ustedes</p>
+                    </div>
+                    <button onclick="speakText('You')" class="w-10 h-10 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors" title="Escuchar pronunciación">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider block">Tercera Persona Masculino</span>
+                        <h4 class="text-2xl font-black text-slate-800">He</h4>
+                        <p class="text-slate-500 text-sm">Él</p>
+                    </div>
+                    <button onclick="speakText('He')" class="w-10 h-10 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors" title="Escuchar pronunciación">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider block">Tercera Persona Femenino</span>
+                        <h4 class="text-2xl font-black text-slate-800">She</h4>
+                        <p class="text-slate-500 text-sm">Ella</p>
+                    </div>
+                    <button onclick="speakText('She')" class="w-10 h-10 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors" title="Escuchar pronunciación">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider block">Tercera Persona Neutro</span>
+                        <h4 class="text-2xl font-black text-slate-800">It</h4>
+                        <p class="text-slate-500 text-sm">Eso / Objeto / Animal</p>
+                    </div>
+                    <button onclick="speakText('It')" class="w-10 h-10 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors" title="Escuchar pronunciación">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider block">Primera Persona Plural</span>
+                        <h4 class="text-2xl font-black text-slate-800">We</h4>
+                        <p class="text-slate-500 text-sm">Nosotros / Nosotras</p>
+                    </div>
+                    <button onclick="speakText('We')" class="w-10 h-10 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors" title="Escuchar pronunciación">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex justify-between items-center sm:col-span-2 lg:col-span-2">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider block">Tercera Persona Plural</span>
+                        <h4 class="text-2xl font-black text-slate-800">They</h4>
+                        <p class="text-slate-500 text-sm">Ellos / Ellas</p>
+                    </div>
+                    <button onclick="speakText('They')" class="w-10 h-10 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors" title="Escuchar pronunciación">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Verb To Be Conjugations -->
+        <section id="verbtobe" class="scroll-mt-24 space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-3">
+                    <i class="fa-solid fa-book-open text-teal-600"></i> 2. El Verbo "To Be" (Ser o Estar)
+                </h3>
+                <p class="text-slate-600 mt-1">El verbo <strong>To Be</strong> significa <em>Ser</em> o <em>Estar</em>. En presente tiene 3 formas: <strong>AM, IS, ARE</strong>.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="flex border-b border-slate-200 bg-slate-100 text-center text-sm font-medium">
+                    <button id="tab-aff-btn" onclick="switchTab('affirmative')" class="flex-1 py-3 px-4 tab-active hover:text-teal-600 transition-colors">
+                        <i class="fa-solid fa-check circle mr-1"></i> Afirmativo
+                    </button>
+                    <button id="tab-neg-btn" onclick="switchTab('negative')" class="flex-1 py-3 px-4 text-slate-600 hover:text-teal-600 transition-colors">
+                        <i class="fa-solid fa-xmark circle mr-1"></i> Negativo
+                    </button>
+                    <button id="tab-int-btn" onclick="switchTab('interrogative')" class="flex-1 py-3 px-4 text-slate-600 hover:text-teal-600 transition-colors">
+                        <i class="fa-solid fa-question circle mr-1"></i> Interrogativo
+                    </button>
+                </div>
+
+                <div class="p-6">
+                    <!-- Affirmative Tab -->
+                    <div id="tab-affirmative" class="space-y-4">
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Estructura Afirmativa: <span class="text-teal-600">Sujeto + Verb To Be + Complemento</span></h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">I am a student.</p>
+                                    <p class="text-xs text-slate-500">Yo soy un estudiante.</p>
+                                </div>
+                                <button onclick="speakText('I am a student')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">You are happy.</p>
+                                    <p class="text-xs text-slate-500">Tú estás feliz.</p>
+                                </div>
+                                <button onclick="speakText('You are happy')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">He is a doctor.</p>
+                                    <p class="text-xs text-slate-500">Él es médico.</p>
+                                </div>
+                                <button onclick="speakText('He is a doctor')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">She is at home.</p>
+                                    <p class="text-xs text-slate-500">Ella está en casa.</p>
+                                </div>
+                                <button onclick="speakText('She is at home')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">It is a sunny day.</p>
+                                    <p class="text-xs text-slate-500">Es un día soleado.</p>
+                                </div>
+                                <button onclick="speakText('It is a sunny day')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">We are friends.</p>
+                                    <p class="text-xs text-slate-500">Nosotros somos amigos.</p>
+                                </div>
+                                <button onclick="speakText('We are friends')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Negative Tab -->
+                    <div id="tab-negative" class="hidden space-y-4">
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Estructura Negativa: <span class="text-teal-600">Sujeto + Verb To Be + NOT + Complemento</span></h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">I am not sad.</p>
+                                    <p class="text-xs text-slate-500">Yo no estoy triste.</p>
+                                </div>
+                                <button onclick="speakText('I am not sad')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">You are not (aren't) late.</p>
+                                    <p class="text-xs text-slate-500">Tú no estás atrasado.</p>
+                                </div>
+                                <button onclick="speakText('You are not late')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">He is not (isn't) tired.</p>
+                                    <p class="text-xs text-slate-500">Él no está cansado.</p>
+                                </div>
+                                <button onclick="speakText('He is not tired')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">They are not (aren't) ready.</p>
+                                    <p class="text-xs text-slate-500">Ellos no están listos.</p>
+                                </div>
+                                <button onclick="speakText('They are not ready')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interrogative Tab -->
+                    <div id="tab-interrogative" class="hidden space-y-4">
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Estructura Interrogativa: <span class="text-teal-600">Verb To Be + Sujeto + Complemento + ?</span></h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">Am I right?</p>
+                                    <p class="text-xs text-slate-500">¿Tengo razón?</p>
+                                </div>
+                                <button onclick="speakText('Am I right?')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">Are you ready?</p>
+                                    <p class="text-xs text-slate-500">¿Estás listo?</p>
+                                </div>
+                                <button onclick="speakText('Are you ready?')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">Is she your teacher?</p>
+                                    <p class="text-xs text-slate-500">¿Ella es tu profesora?</p>
+                                </div>
+                                <button onclick="speakText('Is she your teacher?')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between border border-slate-100">
+                                <div>
+                                    <p class="font-bold text-slate-800">Are they at school?</p>
+                                    <p class="text-xs text-slate-500">¿Están ellos en la escuela?</p>
+                                </div>
+                                <button onclick="speakText('Are they at school?')" class="text-teal-600 hover:text-teal-700" title="Escuchar"><i class="fa-solid fa-volume-high text-lg"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Pronunciation Practice -->
+        <section id="pronunciation" class="scroll-mt-24 space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-3">
+                    <i class="fa-solid fa-microphone text-teal-600"></i> 3. Práctica de Pronunciación
+                </h3>
+                <p class="text-slate-600 mt-1">Escucha la oración en inglés y luego repítela en voz alta para practicar tu pronunciación.</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-6 sm:p-8 shadow-xl">
+                <div class="text-center space-y-4 max-w-xl mx-auto">
+                    <span class="text-teal-400 font-bold uppercase tracking-wider text-xs">Práctica Guiada</span>
+                    <h4 id="practice-phrase" class="text-2xl sm:text-3xl font-extrabold text-white">She is a great teacher.</h4>
+                    <p id="practice-translation" class="text-slate-400 text-sm">Ella es una gran profesora.</p>
+
+                    <div class="flex items-center justify-center gap-4 pt-4">
+                        <button onclick="listenPracticePhrase()" class="bg-teal-500 hover:bg-teal-600 text-slate-900 font-bold px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-teal-500/20">
+                            <i class="fa-solid fa-volume-high"></i> Escuchar Pronunciación
+                        </button>
+                        <button onclick="nextPracticePhrase()" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-5 py-3 rounded-xl transition-all">
+                            Siguiente Frase <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Interactive Quiz -->
+        <section id="exercises" class="scroll-mt-24 space-y-6">
+            <div class="border-b border-slate-200 pb-4 flex justify-between items-center flex-wrap gap-4">
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-3">
+                        <i class="fa-solid fa-pen-to-square text-teal-600"></i> 4. Ejercicios Prácticos
+                    </h3>
+                    <p class="text-slate-600 mt-1">Demuestra lo aprendido respondiendo a estas preguntas en español.</p>
+                </div>
+                <div class="bg-teal-50 border border-teal-200 px-4 py-2 rounded-xl text-teal-800 font-bold text-sm">
+                    Puntuación: <span id="quiz-score" class="text-teal-600 text-lg">0</span> / 5
+                </div>
+            </div>
+
+            <form id="quiz-form" onsubmit="evaluateQuiz(event)" class="space-y-6">
+                <!-- Q1 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <label class="font-bold text-slate-800 block">1. ¿Cuál es el pronombre correcto en inglés para decir "Ella"?</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q1" value="He" class="text-teal-600 focus:ring-teal-500 mr-2"> He
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q1" value="She" class="text-teal-600 focus:ring-teal-500 mr-2"> She
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q1" value="They" class="text-teal-600 focus:ring-teal-500 mr-2"> They
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <label class="font-bold text-slate-800 block">2. Completa la oración: "I ____ a student." (Yo soy un estudiante)</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q2" value="is" class="text-teal-600 focus:ring-teal-500 mr-2"> is
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q2" value="are" class="text-teal-600 focus:ring-teal-500 mr-2"> are
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q2" value="am" class="text-teal-600 focus:ring-teal-500 mr-2"> am
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <label class="font-bold text-slate-800 block">3. Completa la oración: "They ____ my friends." (Ellos son mis amigos)</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q3" value="are" class="text-teal-600 focus:ring-teal-500 mr-2"> are
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q3" value="is" class="text-teal-600 focus:ring-teal-500 mr-2"> is
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q3" value="am" class="text-teal-600 focus:ring-teal-500 mr-2"> am
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <label class="font-bold text-slate-800 block">4. ¿Cuál es la forma negativa correcta para "He is"?</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q4" value="He not is" class="text-teal-600 focus:ring-teal-500 mr-2"> He not is
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q4" value="He is not" class="text-teal-600 focus:ring-teal-500 mr-2"> He is not (isn't)
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q4" value="He am not" class="text-teal-600 focus:ring-teal-500 mr-2"> He am not
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <label class="font-bold text-slate-800 block">5. Selecciona la pregunta correctamente estructurada:</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q5" value="You are happy?" class="text-teal-600 focus:ring-teal-500 mr-2"> You are happy?
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q5" value="Are you happy?" class="text-teal-600 focus:ring-teal-500 mr-2"> Are you happy?
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="q5" value="Is you happy?" class="text-teal-600 focus:ring-teal-500 mr-2"> Is you happy?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 flex-wrap">
+                    <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded-xl transition-colors shadow-lg shadow-teal-600/30">
+                        Verificar Respuestas
+                    </button>
+                    <div id="quiz-feedback" class="text-sm font-semibold"></div>
+                </div>
+            </form>
+        </section>
+
+        <!-- SECTION 5: Educational Video -->
+        <section id="video" class="scroll-mt-24 space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-3">
+                    <i class="fa-solid fa-circle-play text-teal-600"></i> 5. Video Lección Explicativa en Español
+                </h3>
+                <p class="text-slate-600 mt-1">Refuerza la lección observando este video educativo sobre los pronombres y el verbo To Be.</p>
+            </div>
+
+            <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-md space-y-4">
+                <!-- Video Container -->
+                <div class="relative w-full overflow-hidden rounded-xl bg-slate-900" style="padding-top: 56.25%;">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full border-0" 
+                        src="https://www.youtube.com/embed/cVkSndpZtN0" 
+                        title="Pronombres Personales y Verbo To Be en Inglés" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Alternative Link Button -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 bg-amber-50 border border-amber-200 p-4 rounded-xl text-amber-900 text-sm">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-brands fa-youtube text-red-600 text-2xl"></i>
+                        <span>¿El video no se reproduce o aparece bloqueado dentro de esta vista previa?</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=cVkSndpZtN0" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg text-xs tracking-wide transition-colors flex items-center gap-2 whitespace-nowrap">
+                        Ver video directamente en YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+            <p class="font-bold text-white text-lg">Teacher Anthony Altuve</p>
+            <p class="text-sm">Plataforma Educativa Interactiva para el Aprendizaje del Idioma Inglés.</p>
+            <p class="text-xs text-slate-500 pt-4">&copy; 2026 Teacher Anthony Altuve. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.85;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Tu navegador no soporta la función de síntesis de voz.');
+            }
+        }
+
+        function switchTab(tabName) {
+            const tabs = ['affirmative', 'negative', 'interrogative'];
+            tabs.forEach(tab => {
+                const element = document.getElementById(`tab-${tab}`);
+                const btn = document.getElementById(`tab-${tab.substring(0, 3)}-btn`);
+                
+                if (tab === tabName) {
+                    element.classList.remove('hidden');
+                    btn.classList.add('tab-active');
+                    btn.classList.remove('text-slate-600');
+                } else {
+                    element.classList.add('hidden');
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('text-slate-600');
+                }
+            });
+        }
+
+        const practicePhrases = [
+            { text: "She is a great teacher.", translation: "Ella es una gran profesora." },
+            { text: "They are happy today.", translation: "Ellos están felices hoy." },
+            { text: "We are learning English together.", translation: "Estamos aprendiendo inglés juntos." },
+            { text: "He is my best friend.", translation: "Él es mi mejor amigo." },
+            { text: "It is an interesting book.", translation: "Es un libro interesante." }
+        ];
+        let currentPhraseIndex = 0;
+
+        function listenPracticePhrase() {
+            speakText(practicePhrases[currentPhraseIndex].text);
+        }
+
+        function nextPracticePhrase() {
+            currentPhraseIndex = (currentPhraseIndex + 1) % practicePhrases.length;
+            document.getElementById('practice-phrase').innerText = practicePhrases[currentPhraseIndex].text;
+            document.getElementById('practice-translation').innerText = practicePhrases[currentPhraseIndex].translation;
+        }
+
+        function evaluateQuiz(event) {
+            event.preventDefault();
+            const answers = {
+                q1: 'She',
+                q2: 'am',
+                q3: 'are',
+                q4: 'He is not',
+                q5: 'Are you happy?'
+            };
+
+            let score = 0;
+            const formData = new FormData(event.target);
+
+            for (let [key, val] of Object.entries(answers)) {
+                if (formData.get(key) === val) {
+                    score++;
+                }
+            }
+
+            document.getElementById('quiz-score').innerText = score;
+            const feedback = document.getElementById('quiz-feedback');
+
+            if (score === 5) {
+                feedback.className = "text-emerald-600 font-bold";
+                feedback.innerText = "¡Excelente trabajo! Has obtenido un puntaje perfecto (5/5).";
+            } else if (score >= 3) {
+                feedback.className = "text-amber-600 font-bold";
+                feedback.innerText = `¡Buen intento! Obtuviste ${score}/5. Revisa los conceptos e inténtalo de nuevo.`;
+            } else {
+                feedback.className = "text-red-600 font-bold";
+                feedback.innerText = `Obtuviste ${score}/5. Te recomendamos repasar los temas expuestos arriba.`;
+            }
+        }
+    </script>
+</body>
+</html>
